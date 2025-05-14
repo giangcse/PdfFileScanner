@@ -66,7 +66,7 @@ class Program
         {
             int pageCount = GetPdfPageCount(pdfFile.FullName);
             //var paperSize = GetPdfPaperSize(pdfFile.FullName);
-            return new { pdfFile.DirectoryName, pdfFile.Name, PageCount = pageCount, PaperSize = paperSize };
+            return new { pdfFile.DirectoryName, pdfFile.Name, PageCount = pageCount };
         })).ToArray();
 
         // Cập nhật tiến trình sau khi mỗi file được xử lý
