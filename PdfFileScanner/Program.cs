@@ -65,7 +65,7 @@ class Program
         var tasks = pdfFiles.Select((pdfFile, index) => Task.Run(() =>
         {
             int pageCount = GetPdfPageCount(pdfFile.FullName);
-            var paperSize = GetPdfPaperSize(pdfFile.FullName);
+            //var paperSize = GetPdfPaperSize(pdfFile.FullName);
             return new { pdfFile.DirectoryName, pdfFile.Name, PageCount = pageCount, PaperSize = paperSize };
         })).ToArray();
 
@@ -150,7 +150,7 @@ class Program
             worksheet.Cell(1, 1).Value = "Đường dẫn";
             worksheet.Cell(1, 2).Value = "Tên file";
             worksheet.Cell(1, 3).Value = "Số trang";
-            worksheet.Cell(1, 4).Value = "Khổ giấy";
+            //worksheet.Cell(1, 4).Value = "Khổ giấy";
 
             // Điền dữ liệu vào các ô
             for (int i = 0; i < results.Length; i++)
@@ -158,7 +158,7 @@ class Program
                 worksheet.Cell(i + 2, 1).Value = results[i].DirectoryName;
                 worksheet.Cell(i + 2, 2).Value = results[i].Name;
                 worksheet.Cell(i + 2, 3).Value = results[i].PageCount;
-                worksheet.Cell(i + 2, 4).Value = results[i].PaperSize;
+                //worksheet.Cell(i + 2, 4).Value = results[i].PaperSize;
             }
 
             // Lưu kết quả vào file Excel
